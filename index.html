@@ -165,6 +165,7 @@
   .danger-box{margin-top:14px; padding:12px 14px; background:var(--danger-tint); border-left:3px solid var(--danger); border-radius:var(--radius); font-size:13px; color:#5c2213;}
 
   .hidden{display:none !important;}
+  .removed{display:none !important;}
 
   .upload-item{border:1px dashed var(--line); border-radius:var(--radius); padding:12px 14px; margin-bottom:10px;}
   .upload-item .fname{font-size:12px; color:var(--muted); margin-top:6px;}
@@ -235,7 +236,7 @@
       <h1>Pre-Consultation Nutrition Assessment</h1>
       <p>This form gathers the training, medical and dietary information needed to build your individualized sports nutrition plan. Please complete it as accurately as possible before your 1:1 consultation — it takes most athletes 15–20 minutes.</p>
       <div class="meta">
-        <span>21 sections</span>
+        <span>15 sections</span>
         <span>Save time — have your training schedule and last blood test handy</span>
       </div>
     </div>
@@ -282,80 +283,6 @@
         </div>
       </section>
 
-      <!-- 2. ATHLETE PROFILE -->
-      <section class="step" id="s2" data-title="Athlete Profile">
-        <div class="step-head">
-          <div class="numeral">02</div>
-          <div><h2>Athlete Profile</h2><p class="step-sub">Your sport, level and current competitive focus.</p></div>
-        </div>
-        <div class="grid">
-          <div class="field">
-            <label>Primary sport<span class="req">*</span></label>
-            <select required name="primarySport" id="primarySport">
-              <option value="">Select</option>
-              <option>Football (Soccer)</option>
-              <option>Cricket</option>
-              <option>Basketball</option>
-              <option>Running / Athletics (Track &amp; Field)</option>
-              <option>Cycling</option>
-              <option>Swimming</option>
-              <option>Tennis</option>
-              <option>Bodybuilding / Physique</option>
-              <option>Combat Sports (Boxing/MMA/Wrestling/Judo)</option>
-              <option>Strength Sports (Powerlifting/Weightlifting)</option>
-              <option>Hockey</option>
-              <option>Volleyball</option>
-              <option value="Other">Other</option>
-            </select>
-          </div>
-          <div class="field" id="otherSportWrap" style="display:none"><label>Please specify sport</label><input type="text" name="primarySportOther"></div>
-          <div class="field"><label>Sport category</label>
-            <select name="sportCategory">
-              <option value="">Select</option>
-              <option>Endurance</option>
-              <option>Power / Strength</option>
-              <option>Team / Field</option>
-              <option>Weight-category</option>
-              <option>Skill / Precision</option>
-              <option>Mixed / Intermittent</option>
-            </select>
-          </div>
-          <div class="field"><label>Position / event</label><input type="text" name="positionEvent" placeholder="e.g. Fast bowler, 400m, Point guard"></div>
-          <div class="field"><label>Individual or team sport</label>
-            <div class="radio-row">
-              <span class="opt-item"><input type="radio" name="teamType" value="Individual" id="ti1"><label for="ti1">Individual</label></span>
-              <span class="opt-item"><input type="radio" name="teamType" value="Team" id="ti2"><label for="ti2">Team</label></span>
-              <span class="opt-item"><input type="radio" name="teamType" value="Both" id="ti3"><label for="ti3">Both</label></span>
-            </div>
-          </div>
-          <div class="field"><label>Competitive level</label>
-            <select name="level">
-              <option value="">Select</option>
-              <option>Recreational</option>
-              <option>Club / Amateur</option>
-              <option>School / College</option>
-              <option>State / Provincial</option>
-              <option>National</option>
-              <option>International / Professional</option>
-            </select>
-          </div>
-          <div class="field"><label>Years participating in this sport</label><input type="number" min="0" max="60" name="yearsParticipating"></div>
-          <div class="field"><label>Current competitive status</label>
-            <select name="competitiveStatus">
-              <option value="">Select</option>
-              <option>In-season</option>
-              <option>Off-season</option>
-              <option>Pre-season / Building</option>
-              <option>Returning from injury</option>
-              <option>Retired / Recreational only</option>
-            </select>
-          </div>
-          <div class="field"><label>Upcoming competition / event</label><input type="text" name="upcomingEvent"></div>
-          <div class="field"><label>Competition date</label><input type="date" name="upcomingEventDate"></div>
-          <div class="field full"><label>Main athletic goal<span class="req">*</span></label><textarea required name="mainGoal" placeholder="In your own words — what do you want nutrition to help you achieve?"></textarea></div>
-        </div>
-      </section>
-
       <!-- 3. ANTHROPOMETRIC ASSESSMENT -->
       <section class="step" id="s3" data-title="Anthropometrics">
         <div class="step-head">
@@ -385,58 +312,6 @@
           <div class="item"><span class="val" id="bmiCat">—</span><span class="lab">Category</span></div>
         </div>
         <div class="field full" style="margin-top:16px;"><label>Performance / body-composition goal related to physique</label><textarea name="physiqueGoal" placeholder="e.g. maintain weight for weight class, add lean mass, reduce body fat for power-to-weight"></textarea></div>
-      </section>
-
-      <!-- 4. TRAINING & EXERCISE PROFILE -->
-      <section class="step" id="s4" data-title="Training Profile">
-        <div class="step-head">
-          <div class="numeral">04</div>
-          <div><h2>Training &amp; Exercise Profile</h2><p class="step-sub">Your typical training load.</p></div>
-        </div>
-        <div class="grid cols-3">
-          <div class="field"><label>Training days per week</label><input type="number" min="0" max="14" name="trainingDays"></div>
-          <div class="field"><label>Sessions per day</label><input type="number" min="0" max="5" name="sessionsPerDay"></div>
-          <div class="field"><label>Average session duration (min)</label><input type="number" min="0" name="sessionDuration"></div>
-          <div class="field"><label>Usual training time</label>
-            <select name="trainingTime">
-              <option value="">Select</option>
-              <option>Early morning</option>
-              <option>Late morning</option>
-              <option>Afternoon</option>
-              <option>Evening</option>
-              <option>Varies</option>
-            </select>
-          </div>
-          <div class="field"><label>Typical training intensity</label>
-            <select name="trainingIntensity">
-              <option value="">Select</option>
-              <option>Light</option>
-              <option>Moderate</option>
-              <option>Hard</option>
-              <option>Very hard / maximal</option>
-              <option>Mixed</option>
-            </select>
-          </div>
-          <div class="field"><label>Rest days per week</label><input type="number" min="0" max="7" name="restDays"></div>
-        </div>
-        <div class="subhead">Training modes included (select all that apply)</div>
-        <div class="check-grid" data-group="trainingModes"></div>
-        <div class="subhead">Weekly training schedule</div>
-        <div class="table-wrap">
-          <table id="weeklyTable">
-            <thead><tr><th style="width:12%">Day</th><th style="width:24%">Training type</th><th style="width:14%">Start time</th><th style="width:12%">Duration (min)</th><th style="width:16%">Intensity</th><th>Notes</th></tr></thead>
-            <tbody></tbody>
-          </table>
-        </div>
-      </section>
-
-      <!-- 5. SPORTS PERFORMANCE GOALS -->
-      <section class="step" id="s5" data-title="Performance Goals">
-        <div class="step-head">
-          <div class="numeral">05</div>
-          <div><h2>Sports Performance Goals</h2><p class="step-sub">Select everything relevant — this shapes your nutrition strategy.</p></div>
-        </div>
-        <div class="check-grid" data-group="performanceGoals"></div>
       </section>
 
       <!-- 6. MEDICAL & HEALTH HISTORY -->
@@ -581,44 +456,9 @@
           <div class="numeral">10</div>
           <div><h2>Hydration Assessment</h2><p class="step-sub">Fluid habits day-to-day and around training.</p></div>
         </div>
-        <div class="grid cols-3">
-          <div class="field"><label>Daily water intake (L, outside training)</label><input type="number" step="0.1" name="dailyWater"></div>
-          <div class="field"><label>Fluid intake during training (mL/hour, est.)</label><input type="number" step="10" name="fluidDuringTraining"></div>
-          <div class="field"><label>Fluid intake after training</label><input type="text" name="fluidAfterTraining"></div>
-          <div class="field"><label>Sweat rate self-perception</label>
-            <select name="sweatRate"><option value="">Select</option><option>Light sweater</option><option>Moderate sweater</option><option>Heavy sweater</option><option>Not sure</option></select>
-          </div>
-          <div class="field"><label>Typical urine colour</label>
-            <select name="urineColor"><option value="">Select</option><option>Pale yellow (well hydrated)</option><option>Yellow</option><option>Dark yellow</option><option>Amber/brown</option></select>
-          </div>
-          <div class="field"><label>Urine frequency (per day)</label><input type="number" min="0" max="20" name="urineFrequency"></div>
-          <div class="field"><label>Caffeine intake per day</label><input type="text" name="caffeineIntake" placeholder="e.g. 2 cups coffee"></div>
-          <div class="field"><label>Alcohol intake <span class="opt">(if applicable)</span></label><input type="text" name="alcoholIntake"></div>
-          <div class="field"><label>History of dehydration/heat illness</label>
-            <select name="dehydrationHistory"><option value="">Select</option><option>None</option><option>Mild — occasional cramping/lightheadedness</option><option>Moderate — required treatment</option><option>Severe — medical emergency</option></select>
-          </div>
-          <div class="field"><label>Typically trains/competes in hot or humid conditions?</label>
-            <select name="heatTraining"><option value="">Select</option><option>Rarely</option><option>Sometimes</option><option>Often</option></select>
-          </div>
-          <div class="field"><label>Adds extra salt/electrolytes to food or drink?</label>
-            <div class="radio-row">
-              <span class="opt-item"><input type="radio" name="saltAddition" value="Yes" id="sa1"><label for="sa1">Yes</label></span>
-              <span class="opt-item"><input type="radio" name="saltAddition" value="No" id="sa2"><label for="sa2">No</label></span>
-            </div>
-          </div>
-        </div>
-
-        <div class="subhead">Sweat-loss estimate <span style="font-weight:400; color:var(--muted); text-transform:none;">(optional — complete after a training session for a more precise plan)</span></div>
-        <div class="grid cols-3">
-          <div class="field"><label>Pre-training body weight (kg)</label><input type="number" step="0.01" id="preTrainWeight"></div>
-          <div class="field"><label>Post-training body weight (kg)</label><input type="number" step="0.01" id="postTrainWeight"></div>
-          <div class="field"><label>Fluid consumed during session (mL)</label><input type="number" step="10" id="fluidDuringSession"></div>
-          <div class="field"><label>Urine output during session (mL, if any)</label><input type="number" step="10" id="urineDuringSession"></div>
-          <div class="field"><label>Session duration (minutes)</label><input type="number" step="1" id="sessionDurationSweat"></div>
-        </div>
-        <div class="calc-box">
-          <div class="item"><span class="val" id="sweatLossVal">—</span><span class="lab">Estimated sweat loss (L)</span></div>
-          <div class="item"><span class="val" id="sweatRateVal">—</span><span class="lab">Sweat rate (L/hour)</span></div>
+        <div class="grid">
+          <div class="field"><label>Daily water intake (L)</label><input type="number" step="0.1" name="dailyWater"></div>
+          <div class="field"><label>Fluid intake during training (mL/hour)</label><input type="number" step="10" name="fluidDuringTraining"></div>
         </div>
       </section>
 
@@ -687,7 +527,7 @@
       </section>
 
       <!-- 13. TRAINING ENVIRONMENT -->
-      <section class="step" id="s13" data-title="Training Environment">
+      <section class="step removed" id="s13" data-title="Training Environment">
         <div class="step-head">
           <div class="numeral">13</div>
           <div><h2>Training Environment</h2><p class="step-sub">Conditions you regularly train in.</p></div>
@@ -721,7 +561,7 @@
       </section>
 
       <!-- 14. COMPETITION & EVENT NUTRITION -->
-      <section class="step" id="s14" data-title="Competition Nutrition">
+      <section class="step removed" id="s14" data-title="Competition Nutrition">
         <div class="step-head">
           <div class="numeral">14</div>
           <div><h2>Competition &amp; Event Nutrition</h2><p class="step-sub">Fuelling strategy around your next event.</p></div>
@@ -779,7 +619,7 @@
       </section>
 
       <!-- 16. BEHAVIOR & LIFESTYLE -->
-      <section class="step" id="s16" data-title="Behavior & Lifestyle">
+      <section class="step removed" id="s16" data-title="Behavior & Lifestyle">
         <div class="step-head">
           <div class="numeral">16</div>
           <div><h2>Behavior &amp; Lifestyle</h2><p class="step-sub">Habits outside of scheduled training.</p></div>
@@ -974,12 +814,6 @@ document.addEventListener('DOMContentLoaded', function(){
   document.querySelectorAll('.check-grid[data-group]').forEach(buildGroup);
 
   /* ---------------- other sport text field toggle ---------------- */
-  var sportSel = document.getElementById('primarySport');
-  var otherSportWrap = document.getElementById('otherSportWrap');
-  sportSel.addEventListener('change', function(){
-    otherSportWrap.style.display = (sportSel.value === 'Other') ? 'flex' : 'none';
-  });
-
   /* ---------------- default dates ---------------- */
   function getLocalDate(){
     var now = new Date();
@@ -1037,50 +871,10 @@ document.addEventListener('DOMContentLoaded', function(){
   heightInput.addEventListener('input', calcBMI);
   weightInput.addEventListener('input', calcBMI);
 
-  /* ---------------- sweat loss calculation ---------------- */
-  var preW = document.getElementById('preTrainWeight');
-  var postW = document.getElementById('postTrainWeight');
-  var fluidDuring = document.getElementById('fluidDuringSession');
-  var urineDuring = document.getElementById('urineDuringSession');
-  var sessionDur = document.getElementById('sessionDurationSweat');
-  var sweatLossVal = document.getElementById('sweatLossVal');
-  var sweatRateVal = document.getElementById('sweatRateVal');
-  function calcSweat(){
-    var pre = parseFloat(preW.value), post = parseFloat(postW.value);
-    if(isNaN(pre) || isNaN(post)){ sweatLossVal.textContent='—'; sweatRateVal.textContent='—'; return; }
-    var fluid = (parseFloat(fluidDuring.value) || 0) / 1000;
-    var urine = (parseFloat(urineDuring.value) || 0) / 1000;
-    var loss = (pre - post) + fluid - urine;
-    sweatLossVal.textContent = loss.toFixed(2) + ' L';
-    var mins = parseFloat(sessionDur.value);
-    if(mins > 0){
-      var rate = loss / (mins/60);
-      sweatRateVal.textContent = rate.toFixed(2) + ' L/hr';
-    } else {
-      sweatRateVal.textContent = '—';
-    }
-  }
-  [preW, postW, fluidDuring, urineDuring, sessionDur].forEach(function(el){ el.addEventListener('input', calcSweat); });
-
   /* ---------------- readiness slider ---------------- */
   var readinessSlider = document.getElementById('readinessSlider');
   var readinessVal = document.getElementById('readinessVal');
   readinessSlider.addEventListener('input', function(){ readinessVal.textContent = readinessSlider.value; });
-
-  /* ---------------- weekly training table (fixed 7 rows) ---------------- */
-  var days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
-  var weeklyBody = document.querySelector('#weeklyTable tbody');
-  days.forEach(function(day){
-    var tr = document.createElement('tr');
-    tr.innerHTML =
-      '<td>'+day+'</td>'+
-      '<td><input type="text" name="wk_type_'+day+'" placeholder="e.g. Strength"></td>'+
-      '<td><input type="time" name="wk_start_'+day+'"></td>'+
-      '<td><input type="number" name="wk_dur_'+day+'" min="0"></td>'+
-      '<td><select name="wk_int_'+day+'"><option value="">—</option><option>Light</option><option>Moderate</option><option>Hard</option><option>Rest</option></select></td>'+
-      '<td><input type="text" name="wk_notes_'+day+'"></td>';
-    weeklyBody.appendChild(tr);
-  });
 
   /* ---------------- 24hr recall table (dynamic) ---------------- */
   var recallBody = document.querySelector('#recallTable tbody');
@@ -1139,7 +933,7 @@ document.addEventListener('DOMContentLoaded', function(){
   /* ---------------- side nav build + scroll spy ---------------- */
   var sideList = document.getElementById('sideNavList');
   var mobileJump = document.getElementById('mobileJump');
-  var steps = Array.prototype.slice.call(document.querySelectorAll('section.step'));
+  var steps = Array.prototype.slice.call(document.querySelectorAll('section.step:not(.removed)'));
 
   function buildNav(){
     sideList.innerHTML = '';
